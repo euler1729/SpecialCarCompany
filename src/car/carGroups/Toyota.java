@@ -6,7 +6,7 @@ import car.enumerators.GroupVar;
 import car.enumerators.Region;
 import car.interfaces.AutoAI;
 
-public class Toyota extends Car {
+public abstract class Toyota extends Car {
     GroupVar groupVar;
     CarVar carVar;
     AutoAI autoAI;
@@ -46,14 +46,5 @@ public class Toyota extends Car {
 
     public void setRegion(Region region) {
         this.region = region;
-    }
-    public int getPrice(){
-        return getTire().getPrice()
-                + getAc().getPrice()
-                + getChesis().getPrice()
-                + getColor().getPrice()
-                + getEngine().getPrice()
-                + getSeat().getPrice()
-                + autoAI.getPrice();
     }
 }

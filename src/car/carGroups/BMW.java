@@ -1,12 +1,10 @@
 package car.carGroups;
 
 import car.Car;
-import car.enumerators.CarVar;
-import car.enumerators.GroupVar;
-import car.enumerators.Region;
+import car.enumerators.*;
 import car.interfaces.AutoAI;
 
-public class BMW extends Car {
+public abstract class BMW extends Car {
     GroupVar groupVar;
     CarVar carVar;
     AutoAI autoAI;
@@ -14,6 +12,17 @@ public class BMW extends Car {
 
     public BMW() {
         super();
+        groupVar = GroupVar.BMW;
+    }
+
+    public BMW(AcVar ac,
+               ChesisVar chesis,
+               ColorVar color,
+               EngineVar engine,
+               CarVar model,
+               Region region,
+               TireVar tire) {
+        super(ac, chesis, color, engine, model, region, tire);
         groupVar = GroupVar.BMW;
     }
 
@@ -47,14 +56,5 @@ public class BMW extends Car {
 
     public void setRegion(Region region) {
         this.region = region;
-    }
-    public int getPrice(){
-        return getTire().getPrice()
-                + getAc().getPrice()
-                + getChesis().getPrice()
-                + getColor().getPrice()
-                + getEngine().getPrice()
-                + getSeat().getPrice()
-                + autoAI.getPrice();
     }
 }

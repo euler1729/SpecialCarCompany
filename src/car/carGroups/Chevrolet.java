@@ -1,18 +1,26 @@
 package car.carGroups;
 
 import car.Car;
-import car.enumerators.CarVar;
-import car.enumerators.GroupVar;
-import car.enumerators.Region;
+import car.enumerators.*;
 import car.interfaces.AutoAI;
 
-public class Chevrolet extends Car {
+public abstract class Chevrolet extends Car {
     GroupVar groupVar;
     CarVar carVar;
     AutoAI autoAI;
     Region region;
     public Chevrolet() {
         super();
+        groupVar = GroupVar.CHEVROLET;
+    }
+    public Chevrolet(AcVar ac,
+               ChesisVar chesis,
+               ColorVar color,
+               EngineVar engine,
+               CarVar model,
+               Region region,
+               TireVar tire) {
+        super(ac, chesis, color, engine, model, region, tire);
         groupVar = GroupVar.CHEVROLET;
     }
 
@@ -47,13 +55,5 @@ public class Chevrolet extends Car {
     public void setRegion(Region region) {
         this.region = region;
     }
-    public int getPrice(){
-        return getTire().getPrice()
-                + getAc().getPrice()
-                + getChesis().getPrice()
-                + getColor().getPrice()
-                + getEngine().getPrice()
-                + getSeat().getPrice()
-                + autoAI.getPrice();
-    }
+
 }

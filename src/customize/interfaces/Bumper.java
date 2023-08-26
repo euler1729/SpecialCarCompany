@@ -1,4 +1,8 @@
 package customize.interfaces;
 
-public interface Bumper {
+import customize.enumerators.BumperVar;
+
+public interface Bumper{
+    public BumperVar type();
+    public int price();
 }

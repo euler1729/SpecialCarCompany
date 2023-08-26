@@ -1,12 +1,9 @@
-import car.enumerators.AcVar;
-import car.factories.AcFactory;
-import car.interfaces.AC;
+import car.Car;
+import car.model.BMWMilitary;
 
 public class Main {
     public static void main(String[] args) {
-        AC ac = new AcFactory().getInstance(AcVar.LOW);
-        if(ac.getType()==AcVar.LOW){
-            System.out.println("Low Ac");
-        }
+        Car car = new BMWMilitary();
+        System.out.println(car.getPrice());
     }
 }
